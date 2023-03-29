@@ -10,13 +10,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.DecelerateInterpolator
+import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import com.erzhan.test.R
+import com.erzhan.test.core.Utils
 import com.erzhan.test.core.ui.BaseFragment
 import com.erzhan.test.ui.home.HomeViewModel
 import com.erzhan.test.databinding.FragmentHomeBinding
+import com.google.android.material.internal.ViewUtils.hideKeyboard
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
@@ -29,6 +33,49 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
     override fun initListeners() {
         super.initListeners()
+
+        binding.etAirtimeNumber.setOnEditorActionListener { textView, i, _ ->
+            if (i == EditorInfo.IME_ACTION_DONE) {
+                if (Utils.isValidPhoneNumber(textView.text.toString())) {
+                    try {
+                        binding.etAirtimeNumber.setText(Utils.normalizePhoneNumber(textView.text.toString()))
+                        binding.etAirtimeAmount.requestFocus()
+                        return@setOnEditorActionListener true
+                    } catch (e: IllegalArgumentException) {
+                        binding.etAirtimeNumber.error = e.message
+                        binding.airtimeButton.isEnabled = false
+                        return@setOnEditorActionListener false
+                    }
+                } else {
+                    binding.etAirtimeNumber.error = "Invalid phone number"
+                    binding.airtimeButton.isEnabled = false
+                    return@setOnEditorActionListener false
+                }
+            }
+            false
+        }
+
+        binding.etAirtimeAmount.setOnEditorActionListener { textView, i, keyEvent ->
+            if (i == EditorInfo.IME_ACTION_DONE) {
+                if (textView.text.toString().isNotEmpty()
+                    && textView.text.toString().toInt() >= 5
+                ) {
+                    Utils.hideKeyboard(requireContext(), binding.root)
+                    updateUI()
+                    return@setOnEditorActionListener true
+                } else {
+                    binding.etAirtimeAmount.error = "Amount must be greater than 5 £sd"
+                    binding.airtimeButton.isEnabled = false
+                }
+            }
+            false
+        }
+
+    }
+
+    private fun updateUI() {
+        binding.airtimeButton.isEnabled =
+            Utils.isValidPhoneNumber(binding.etAirtimeNumber.text.toString())
     }
 
     private fun initSpinner() {
@@ -39,27 +86,28 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         )
         binding.airtimeSpinner.adapter = spinnerAdapter
 
-        binding.airtimeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long,
-            ) {
-                when (position) {
-                    0 -> {
-                        binding.airtimeIcon.setImageResource(R.drawable.telcom)
-                    }
-                    1 -> {
-                        binding.airtimeIcon.setImageResource(R.drawable.safaricom)
+        binding.airtimeSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long,
+                ) {
+                    when (position) {
+                        0 -> {
+                            binding.airtimeIcon.setImageResource(R.drawable.telcom)
+                        }
+                        1 -> {
+                            binding.airtimeIcon.setImageResource(R.drawable.safaricom)
+                        }
                     }
                 }
-            }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                // Do nothing
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    // Do nothing
+                }
             }
-        }
 
         binding.bannerButtonClose.setOnClickListener {
             binding.infoBanner.visibility = View.GONE
