@@ -27,6 +27,7 @@ class Utils {
         fun isValidPhoneNumber(phone: String): Boolean {
             val digitsOnly = phone
                 .replace(Regex("\\D"), "")
+                .replace(Regex("[\\s\\+\\-]"), "")
                 .removePrefix("0")
 
             if (digitsOnly.length < 9) {

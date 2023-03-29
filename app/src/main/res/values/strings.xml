@@ -2,4 +2,32 @@
     <string name="app_name">Test</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_account">My Account</string>
+    <string name="d_washington">D Washington</string>
+    <string name="shake_n_win_airtime">Shake N Win Airtime</string>
+    <string name="banner_desc">Shake N Win to Win Airtime on any Telco is currently open.</string>
+    <string name="view">View</string>
+    <string name="close">Close</string>
+    <string name="quick_access">Quick Access</string>
+    <string name="view_all">View All</string>
+    <string name="top_up">Top Up</string>
+    <string name="all_products">All Products</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="buy_airtime">Buy Airtime</string>
+    <string name="telkom">Telkom</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="amount">Amount</string>
+    <string name="_000_000_0000">000 000 0000</string>
+    <string name="_100">100</string>
+    <string name="buy">Buy</string>
+    <string name="community">Community</string>
+    <string name="avunja">Avunja</string>
+    <string name="_21_feb_2023">21 Feb 2023</string>
+    <string name="community_title">We are training! Register for one of our virtual classes today... first come, first served.</string>
+    <string name="temp_14k_like">14K Like</string>
+    <string name="temp_12_comments">12 Comments</string>
+    <string name="temp_254_shared">254 Shared</string>
+    <string name="safaricom">Safaricom</string>
+    <string name="invalid_phone_number">Invalid phone number</string>
+    <string name="invalid_amount">Amount must be greater than 5 £sd</string>
 </resources>

@@ -21,6 +21,7 @@ import com.erzhan.test.core.ui.BaseFragment
 import com.erzhan.test.ui.home.HomeViewModel
 import com.erzhan.test.databinding.FragmentHomeBinding
 import com.google.android.material.internal.ViewUtils.hideKeyboard
+import org.koin.android.ext.android.get
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
@@ -47,7 +48,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                         return@setOnEditorActionListener false
                     }
                 } else {
-                    binding.etAirtimeNumber.error = "Invalid phone number"
+                    binding.etAirtimeNumber.error = getString(R.string.invalid_phone_number)
                     binding.airtimeButton.isEnabled = false
                     return@setOnEditorActionListener false
                 }
@@ -64,7 +65,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                     updateUI()
                     return@setOnEditorActionListener true
                 } else {
-                    binding.etAirtimeAmount.error = "Amount must be greater than 5 £sd"
+                    binding.etAirtimeAmount.error = getString(R.string.invalid_amount)
                     binding.airtimeButton.isEnabled = false
                 }
             }
@@ -82,7 +83,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         val spinnerAdapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_spinner_item,
-            arrayOf("Telcom", "Safaricom")
+            arrayOf(getString(R.string.telkom), getString(R.string.safaricom))
         )
         binding.airtimeSpinner.adapter = spinnerAdapter
 
