@@ -1,6 +1,7 @@
 package com.erzhan.test.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun initView() {
         super.initView()
         initSpinner()
+    }
+
+    override fun initListeners() {
+        super.initListeners()
     }
 
     private fun initSpinner() {

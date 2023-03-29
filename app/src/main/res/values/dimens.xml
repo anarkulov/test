@@ -41,4 +41,7 @@
     <dimen name="card_view_elevation">8dp</dimen>
     <dimen name="button_elevation">4dp</dimen>
 
+
+    <dimen name="bottom_nav_icon_selected_size">28dp</dimen>
+    <dimen name="bottom_nav_icon_unselected_size">20dp</dimen>
 </resources>
