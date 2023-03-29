@@ -1,7 +1,9 @@
 package com.erzhan.test.ui
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatDelegate
 import com.erzhan.test.R
 import com.erzhan.test.core.ui.BaseActivity
 import com.erzhan.test.databinding.ActivityMainBinding
@@ -11,6 +13,11 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     override fun inflateViewBinding(inflater: LayoutInflater): ActivityMainBinding {
         return ActivityMainBinding.inflate(inflater)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 
     override fun initView() {

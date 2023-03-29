@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="text_caption">#800A0B0F</color>
+    <color name="text_placeholder">#E0E0E0</color>
     <color name="red_primary">#D22B40</color>
 
 </resources>

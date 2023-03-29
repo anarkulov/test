@@ -1,10 +1,15 @@
 package com.erzhan.test.ui
 
+import android.animation.AnimatorSet
+import android.animation.ValueAnimator
+import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
@@ -55,6 +60,12 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                 // Do nothing
             }
         }
+
+        binding.bannerButtonClose.setOnClickListener {
+            binding.infoBanner.visibility = View.GONE
+        }
+
+
     }
 
     override fun inflateViewBinding(
