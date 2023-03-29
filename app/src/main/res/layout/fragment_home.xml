@@ -28,6 +28,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
             android:paddingBottom="@dimen/page_margin">
 
             <androidx.cardview.widget.CardView
@@ -412,7 +413,7 @@
                         style="@style/Button.Red"
                         android:layout_width="0dp"
                         android:layout_weight="0.3"
-                        android:enabled="true"
+                        android:enabled="false"
                         android:stateListAnimator="@null"
                         android:text="Buy"
                         app:layout_constraintBottom_toBottomOf="@+id/airtime_amount"
