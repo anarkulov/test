@@ -103,6 +103,7 @@
 
     <style name="Text.Regular.Small.Caption" parent="Text.Regular.Small">
         <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/text_caption</item>
     </style>
 
     <style name="Text.Light" parent="Text">
