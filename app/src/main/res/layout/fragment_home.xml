@@ -27,7 +27,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/page_margin">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/profile_image_card"
@@ -107,9 +108,9 @@
 
                 <ImageView
                     android:id="@+id/banner_image"
-                    android:layout_width="74dp"
-                    android:layout_height="74dp"
-                    android:layout_margin="@dimen/big_margin"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_margin="25dp"
                     android:background="@drawable/bg_icon_alpha"
                     android:padding="@dimen/element_margin"
                     android:src="@drawable/ic_shake_phone"
@@ -177,7 +178,8 @@
                 style="@style/Text.Medium.H3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginStart="@dimen/big_margin"
                 android:text="Quick Access"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/info_banner" />
@@ -189,6 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/big_margin"
                 android:text="View All"
+                android:textColor="@color/red_primary"
                 app:layout_constraintBottom_toBottomOf="@id/quick_access"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/quick_access" />
@@ -197,7 +200,7 @@
                 android:id="@+id/top_up"
                 android:layout_width="68dp"
                 android:layout_height="68dp"
-                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginTop="@dimen/default_margin"
                 android:background="@drawable/bg_default_middle"
                 android:padding="@dimen/page_margin"
                 android:src="@drawable/ic_top_up"
@@ -305,10 +308,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/safaricom"
+                        android:src="@drawable/telcom"
                         tools:ignore="ContentDescription" />
 
                 </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.Medium.Small"
+                    android:textSize="@dimen/text_middle"
+                    app:layout_constraintBottom_toBottomOf="@+id/airtime_icon_card"
+                    app:layout_constraintStart_toEndOf="@+id/airtime_icon_card"
+                    app:layout_constraintTop_toTopOf="@+id/airtime_icon_card"
+                    android:paddingHorizontal="@dimen/element_margin"
+                    android:text="Telkom"
+                    android:drawablePadding="@dimen/small_margin"
+                    app:drawableEndCompat="@drawable/ic_chevron_down" />
 
                 <Spinner
                     android:id="@+id/airtime_spinner"
@@ -317,6 +333,7 @@
                     android:layout_marginStart="@dimen/medium_margin"
                     android:entries="@array/airtime_networks"
                     android:spinnerMode="dropdown"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/airtime_icon_card"
                     app:layout_constraintStart_toEndOf="@+id/airtime_icon_card"
                     app:layout_constraintTop_toTopOf="@+id/airtime_icon_card" />
@@ -352,7 +369,9 @@
                     android:layout_height="wrap_content"
                     android:clipToPadding="false"
                     android:orientation="horizontal"
-                    android:padding="@dimen/medium_margin"
+                    android:paddingHorizontal="@dimen/medium_margin"
+                    android:paddingBottom="@dimen/default_margin"
+                    android:paddingTop="@dimen/element_margin"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -364,11 +383,11 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="@dimen/medium_margin"
-                        android:layout_weight="0.6"
+                        android:layout_weight="0.65"
                         android:hint="000 000 0000"
                         android:inputType="number"
                         android:paddingHorizontal="@dimen/default_margin"
-                        android:textColorHint="@color/text_caption"
+                        android:textColorHint="@color/text_placeholder"
                         app:layout_constraintEnd_toStartOf="@+id/airtime_amount"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -379,11 +398,11 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="@dimen/medium_margin"
-                        android:layout_weight="0.2"
-                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        android:paddingHorizontal="@dimen/default_margin"
                         android:hint="100"
                         android:inputType="number"
-                        android:textColorHint="@color/text_caption"
+                        android:textColorHint="@color/text_placeholder"
                         app:layout_constraintBottom_toBottomOf="@+id/airtime_number"
                         app:layout_constraintEnd_toStartOf="@+id/airtime_button"
                         app:layout_constraintTop_toTopOf="@+id/airtime_number" />
@@ -392,7 +411,6 @@
                         android:id="@+id/airtime_button"
                         style="@style/Button.Red"
                         android:layout_width="0dp"
-                        android:layout_marginEnd="@dimen/medium_margin"
                         android:layout_weight="0.3"
                         android:enabled="false"
                         android:text="Buy"
@@ -421,6 +439,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/big_margin"
                 android:text="View"
+                android:textColor="@color/red_primary"
                 app:layout_constraintBottom_toBottomOf="@id/community"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/community" />
@@ -439,7 +458,7 @@
                     android:id="@+id/community_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginStart="@dimen/default_margin"
                     android:layout_marginTop="@dimen/default_margin"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_footprint"
@@ -486,7 +505,7 @@
                     style="@style/Text.Regular.Normal"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/page_margin"
+                    android:layout_marginHorizontal="@dimen/default_margin"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:text="We are training! Register for one of our virtual classes today... first come, first served."
                     app:layout_constraintEnd_toEndOf="parent"
@@ -497,9 +516,10 @@
                 <ImageView
                     android:id="@+id/community_image"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
                     android:layout_marginHorizontal="@dimen/default_margin"
-                    android:layout_marginTop="@dimen/page_margin"
+                    android:layout_marginTop="@dimen/default_margin"
                     android:src="@drawable/community_image"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -533,7 +553,7 @@
                     android:id="@+id/comments_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/page_margin"
+                    android:layout_marginVertical="@dimen/default_margin"
                     android:layout_marginStart="@dimen/default_margin"
                     android:src="@drawable/ic_comments"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -547,7 +567,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/element_margin"
-                    android:text="254 Comments"
+                    android:text="12 Comments"
                     app:layout_constraintBottom_toBottomOf="@+id/comments_icon"
                     app:layout_constraintStart_toEndOf="@id/comments_icon"
                     app:layout_constraintTop_toTopOf="@+id/comments_icon" />
