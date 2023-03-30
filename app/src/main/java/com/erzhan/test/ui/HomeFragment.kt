@@ -72,6 +72,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
             false
         }
 
+        binding.bannerButtonClose.setOnClickListener {
+            binding.infoBanner.visibility = View.GONE
+        }
+
     }
 
     private fun updateUI() {
