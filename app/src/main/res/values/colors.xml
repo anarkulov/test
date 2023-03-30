@@ -3,8 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="text_primary">#0A0B0F</color>
     <color name="text_caption">#800A0B0F</color>
     <color name="text_placeholder">#E0E0E0</color>
     <color name="red_primary">#D22B40</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

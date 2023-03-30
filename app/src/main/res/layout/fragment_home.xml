@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment">
+    tools:context=".ui.home.HomeFragment">
 
     <ProgressBar
         android:id="@+id/loading"
@@ -293,29 +293,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/buy_airtime">
 
-                <androidx.cardview.widget.CardView
+                <FrameLayout
                     android:id="@+id/airtime_icon_card"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/default_margin"
-                    android:background="@drawable/bg_default"
-                    android:padding="2dp"
-                    app:cardElevation="0dp"
+                    android:padding="1dp"
+                    android:background="@drawable/bg_image_rounded_gray"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
+                    <com.makeramen.roundedimageview.RoundedImageView
                         android:id="@+id/airtime_icon"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitCenter"
                         android:src="@drawable/telcom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:riv_corner_radius="6dp"
                         tools:ignore="ContentDescription" />
 
-                </androidx.cardview.widget.CardView>
+                </FrameLayout>
 
                 <TextView
+                    android:id="@+id/airtime_operator"
                     style="@style/Text.Medium.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -435,7 +438,7 @@
                 style="@style/Text.Medium.H3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/page_margin"
+                android:layout_margin="@dimen/big_margin"
                 android:text="@string/community"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/airtime_layout" />
@@ -445,7 +448,7 @@
                 style="@style/Text.Medium.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/page_margin"
+                android:layout_marginEnd="@dimen/big_margin"
                 android:text="@string/view"
                 android:textColor="@color/red_primary"
                 app:layout_constraintBottom_toBottomOf="@id/community"
@@ -453,26 +456,34 @@
                 app:layout_constraintTop_toTopOf="@id/community" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/community_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/page_margin"
+                android:layout_marginHorizontal="@dimen/big_margin"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/bg_button_outlined_small"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/community">
 
-                <ImageView
+                <FrameLayout
                     android:id="@+id/community_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/default_margin"
-                    android:layout_marginTop="@dimen/default_margin"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_footprint"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_image_rounded_red"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="ContentDescription" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_footprint"
+                        app:riv_oval="true" />
+
+                </FrameLayout>
 
                 <TextView
                     android:id="@+id/community_name"
@@ -604,6 +615,48 @@
                     app:layout_constraintTop_toTopOf="@+id/share_icon" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/chats"
+                style="@style/Text.Medium.H3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/big_margin"
+                android:text="@string/chats"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/community_layout" />
+
+            <TextView
+                android:id="@+id/view_all_chats"
+                style="@style/Text.Medium.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:text="@string/view_all"
+                android:textColor="@color/red_primary"
+                app:layout_constraintBottom_toBottomOf="@id/chats"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/chats" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/big_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chats">
+
+                <include layout="@layout/item_chat" />
+
+                <include layout="@layout/item_chat" />
+
+                <include layout="@layout/item_chat" />
+
+            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

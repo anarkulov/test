@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/big_margin"
+        android:paddingVertical="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginBottom="40dp">
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:alpha="0.5"
+                android:background="@color/text_primary" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/bottom_sheet_title"
+            style="@style/Text.Bold.H1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_provider" />
+
+        <LinearLayout
+            android:id="@+id/option_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:background="@drawable/bg_item_selectable"
+            android:padding="@dimen/medium_margin">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:background="@drawable/bg_image"
+                android:padding="1dp"
+                android:src="@drawable/airtel"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                style="@style/Text.Regular.Middle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_weight="1"
+                android:text="@string/airtel" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/option_one_checkbox"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:button="@drawable/item_checkable"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/option_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:background="@drawable/bg_item_selectable"
+            android:padding="@dimen/medium_margin">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:background="@drawable/bg_image"
+                android:src="@drawable/safaricom"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                style="@style/Text.Regular.Middle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_weight="1"
+                android:text="@string/safaricom" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/option_two_checkbox"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:button="@drawable/item_checkable"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/option_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:background="@drawable/bg_item_selectable"
+            android:padding="@dimen/medium_margin">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:background="@drawable/bg_image"
+                android:src="@drawable/telcom"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                style="@style/Text.Regular.Middle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_weight="1"
+                android:text="@string/telkom" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/option_three_checkbox"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:button="@drawable/item_checkable"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_select"
+            style="@style/Button.Red.Full"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/page_margin"
+            android:layout_marginBottom="40dp"
+            android:text="@string/select" />
+
+    </LinearLayout>
+
+</LinearLayout>

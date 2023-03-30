@@ -58,5 +58,7 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-viewmodel:2.2.3"
     implementation "io.insert-koin:koin-androidx-fragment:2.2.3"
 
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
 
 }
