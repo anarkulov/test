@@ -38,16 +38,27 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/page_margin"
                 app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
+                <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/profile_image"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/profile_avatar"
+                    android:src="@drawable/bg_profile_image"
+                    app:riv_oval="true"
                     tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/profile_image_text"
+                    style="@style/Text.Medium.Normal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="DW"
+                    android:textColor="@color/white" />
 
             </androidx.cardview.widget.CardView>
 
@@ -299,8 +310,8 @@
                     android:layout_height="35dp"
                     android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/default_margin"
-                    android:padding="1dp"
                     android:background="@drawable/bg_image_rounded_gray"
+                    android:padding="1dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -651,7 +662,7 @@
 
                 <include layout="@layout/item_chat" />
 
-                <include layout="@layout/item_chat" />
+                <include layout="@layout/item_group_chat" />
 
                 <include layout="@layout/item_chat" />
 

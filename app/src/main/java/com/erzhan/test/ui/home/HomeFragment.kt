@@ -68,21 +68,33 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         }
 
         airtelLayout?.setOnClickListener {
-            airtelCheckBox?.isChecked = true
             safaricomCheckBox?.isChecked = false
+            safaricomLayout?.isSelected = false
             telcomCheckBox?.isChecked = false
+            telcomLayout?.isSelected = false
+
+            airtelCheckBox?.isChecked = true
+            airtelLayout.isSelected = true
         }
 
         safaricomLayout?.setOnClickListener {
             airtelCheckBox?.isChecked = false
-            safaricomCheckBox?.isChecked = true
+            airtelLayout?.isSelected = false
             telcomCheckBox?.isChecked = false
+            telcomLayout?.isSelected = false
+
+            safaricomLayout.isSelected = true
+            safaricomCheckBox?.isChecked = true
         }
 
         telcomLayout?.setOnClickListener {
             airtelCheckBox?.isChecked = false
+            airtelLayout?.isSelected = false
             safaricomCheckBox?.isChecked = false
+            safaricomLayout?.isSelected = false
+
             telcomCheckBox?.isChecked = true
+            telcomLayout.isSelected = true
         }
 
         btnSelect?.setOnClickListener {
