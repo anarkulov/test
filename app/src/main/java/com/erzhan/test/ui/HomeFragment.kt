@@ -1,27 +1,18 @@
 package com.erzhan.test.ui
 
-import android.animation.AnimatorSet
-import android.animation.ValueAnimator
-import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.DecelerateInterpolator
 import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import com.erzhan.test.R
 import com.erzhan.test.core.Utils
 import com.erzhan.test.core.ui.BaseFragment
-import com.erzhan.test.ui.home.HomeViewModel
 import com.erzhan.test.databinding.FragmentHomeBinding
-import com.google.android.material.internal.ViewUtils.hideKeyboard
-import org.koin.android.ext.android.get
+import com.erzhan.test.ui.home.HomeViewModel
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 

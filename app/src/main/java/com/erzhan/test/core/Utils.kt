@@ -22,7 +22,7 @@ class Utils {
 
             val normalized = "254${digitsOnly}"
 
-            return normalized.replace(Regex("[\\s\\+\\-]"), "")
+            return normalized.replace(Regex("[\\s\\+\\-]"), "").chunked(3).joinToString(" ")
         }
         fun isValidPhoneNumber(phone: String): Boolean {
             val digitsOnly = phone
