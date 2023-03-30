@@ -45,19 +45,31 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         fun update() {
             when(binding.airtimeOperator.text.toString()) {
                 getString(R.string.airtel) -> {
-                    airtelCheckBox?.isChecked = true
                     safaricomCheckBox?.isChecked = false
+                    safaricomLayout?.isSelected = false
                     telcomCheckBox?.isChecked = false
+                    telcomLayout?.isSelected = false
+
+                    airtelCheckBox?.isChecked = true
+                    airtelLayout.isSelected = true
                 }
                 getString(R.string.safaricom) -> {
                     airtelCheckBox?.isChecked = false
-                    safaricomCheckBox?.isChecked = true
+                    airtelLayout?.isSelected = false
                     telcomCheckBox?.isChecked = false
+                    telcomLayout?.isSelected = false
+
+                    safaricomLayout.isSelected = true
+                    safaricomCheckBox?.isChecked = true
                 }
                 getString(R.string.telkom) -> {
                     airtelCheckBox?.isChecked = false
+                    airtelLayout?.isSelected = false
                     safaricomCheckBox?.isChecked = false
+                    safaricomLayout?.isSelected = false
+
                     telcomCheckBox?.isChecked = true
+                    telcomLayout.isSelected = true
                 }
             }
         }

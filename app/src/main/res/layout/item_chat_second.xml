@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:src="@drawable/avatar_1"
+            android:src="@drawable/avatar_3"
             app:riv_oval="true" />
 
     </FrameLayout>
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/medium_margin"
-        android:text="@string/_23_minutes_ago"
+        android:text="@string/yesterday"
         app:layout_constraintBottom_toBottomOf="@+id/cv_avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cv_avatar"

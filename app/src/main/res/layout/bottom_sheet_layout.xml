@@ -72,7 +72,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:button="@drawable/item_checkable"
-                android:enabled="false"
+                android:clickable="false"
                 android:gravity="center" />
 
         </LinearLayout>
@@ -111,7 +111,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:button="@drawable/item_checkable"
-                android:enabled="false"
+                android:clickable="false"
                 android:gravity="center" />
 
         </LinearLayout>
@@ -150,7 +150,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:button="@drawable/item_checkable"
-                android:enabled="false"
+                android:clickable="false"
                 android:gravity="center" />
 
         </LinearLayout>

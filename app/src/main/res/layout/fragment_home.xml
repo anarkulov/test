@@ -664,7 +664,7 @@
 
                 <include layout="@layout/item_group_chat" />
 
-                <include layout="@layout/item_chat" />
+                <include layout="@layout/item_chat_second" />
 
             </LinearLayout>
 
