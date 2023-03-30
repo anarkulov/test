@@ -342,18 +342,6 @@
                     app:layout_constraintStart_toEndOf="@+id/airtime_icon_card"
                     app:layout_constraintTop_toTopOf="@+id/airtime_icon_card" />
 
-                <Spinner
-                    android:id="@+id/airtime_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:entries="@array/airtime_networks"
-                    android:spinnerMode="dropdown"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="@+id/airtime_icon_card"
-                    app:layout_constraintStart_toEndOf="@+id/airtime_icon_card"
-                    app:layout_constraintTop_toTopOf="@+id/airtime_icon_card" />
-
                 <TextView
                     android:id="@+id/airtime_phone_number_text"
                     style="@style/Text.Regular.Small.Caption"
