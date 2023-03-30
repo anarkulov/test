@@ -59,7 +59,7 @@
         style="@style/Text.Regular.Small.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/page_margin"
         android:text="@string/_23_minutes_ago"
         app:layout_constraintBottom_toBottomOf="@+id/cv_avatar"
         app:layout_constraintEnd_toEndOf="parent"
